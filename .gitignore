@@ -1,0 +1,64 @@
+Skip to content
+This repository  
+Search
+Pull requests
+Issues
+Gist
+ @Jonathangarrido
+ Unwatch 1
+  Star 0
+  Fork 0 Jonathangarrido/web-con-a
+ Code  Issues 0  Pull requests 0  Wiki  Pulse  Graphs  Settings
+Branch: master Find file Copy pathweb-con-a/.gitignore
+3ca506d  5 days ago
+@Jonathangarrido Jonathangarrido Start
+1 contributor
+RawBlameHistory     46 lines (36 sloc)  574 Bytes
+### Bower ###
+bower_components
+.bower-cache
+.bower-registry
+.bower-tmp
+
+
+### Node ###
+node_modules
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Created by https://www.gitignore.io
+
+### OSX ###
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must end with two \r
+Icon
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+
+### Sass ###
+.sass-cache
+*.css.map
+Status API Training Shop Blog About Pricing
+© 2015 GitHub, Inc. Terms Privacy Security Contact Help

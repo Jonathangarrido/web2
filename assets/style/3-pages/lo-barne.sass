@@ -1,0 +1,80 @@
+.barne-home
+  @include full-home('fondo-canchaslobarne')
+
+.barne-canchas
+  padding: 2rem 0 0
+  text-align: center
+
+.barne-lista
+  ul 
+    padding: 0
+  li
+    cursor: pointer
+    height: 5rem
+    display: flex
+    justify-content: center
+    align-items: center
+    @include media($breakpoints-m)
+      height: 11rem
+  h2
+    font-size: 1.2rem
+    @include media($breakpoints-m)
+      font-size: 1.5rem
+
+.barne-buscador
+  margin-bottom: 2rem
+  @include max-width(300px)
+
+.barne-info
+  margin-top: 1rem
+  text-align: left
+  @include max-width(600px)
+  h1
+    text-align: center
+    margin-bottom: 1rem
+  table
+    width: 100%
+    border-spacing: 0
+  th
+    padding: .25rem .5rem
+    width: 115px
+    position: relative
+    text-align: right
+    &:after
+      content: ':'
+      float: right  
+  td
+    padding-right: .5rem
+  tr
+    &:nth-child(odd)
+      background-color: rgba(black,.1)
+    
+
+.barne-map
+  margin-top: 1.5rem 
+  height: 50vh
+  width: 100vw
+  background-color: red
+
+.barne-footer
+  padding: 3rem 0
+  text-align: center
+  background-color: $basecolor
+
+.barne-canchas-fondo
+  background-position: center center
+  background-size: cover
+  background-repeat: no-repeat
+  overflow: hidden
+  position: relative
+  color: white
+
+  h2
+    font-weight: lighter
+    font-family: $basefont
+$canchas: el-chuncho cerro-norte estadio-barnechea cerro-sur-copa cerro-sur-vuelta los-quincheros el-tranque los-mormones san-esteban nebraska la-ponderosa las-cuatro-canchas pato-cornejo lo-hermita-cuartaetapa lo-hermita-puente-azul liceo-estados-americanos lo-hermita-primera-etapa las-lomas san-jose la-parroquia pastor-fernandez carabineros san-rafael gym-municipal
+@each $cancha in $canchas
+  .cancha-#{$cancha}
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 10%,rgba(0,0,0,.1) 30%,rgba(0,0,0,.4) 50%,rgba(0,0,0,.1) 70%,rgba(0,0,0,0) 90%, rgba(0,0,0,0) 100%), url('#{$image-dir}/#{$cancha}-s.jpg')  
+  @include media($breakpoints-m)
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 10%,rgba(0,0,0,.1) 30%,rgba(0,0,0,.4) 50%,rgba(0,0,0,.1) 70%,rgba(0,0,0,0) 90%, rgba(0,0,0,0) 100%), url('#{$image-dir}/#{$cancha}-m.jpg')  

@@ -1,0 +1,87 @@
+.home
+  @include full-home()
+
+.home-titulo
+  border: solid 1px $white
+  border-radius: $radius
+  padding: 1rem 2rem
+  background-color: rgba( $black, .2)
+
+.biografia
+  background-color: green
+  padding: 5rem 0
+  text-align: center
+  &>div
+    margin-bottom: 2rem
+
+.container-center
+  @include max-width(600px)
+
+.skills
+  &>div
+    padding: 0.5rem 1rem
+
+  h2
+    @include font-size(.9)
+    margin-top: .3rem
+
+.skill
+  width: 100%
+  height: 2rem
+  background-color: red
+  position: relative
+  &:after
+    content: ''
+    height: 100%
+    background-color: yellow
+    @include position(absolute)
+
+@for $i from 1 through 10
+  .skill-#{$i}
+    &:after
+      width: 10 * $i * 1%
+
+.works
+  background-color: pink
+  padding: 3rem 0
+  text-align: center
+
+.work
+  &>div
+    padding: 0
+    height: 11rem
+    overflow: hidden
+  a
+    cursor: pointer
+    display: inline-block
+    height: 100%
+    width: 100%
+
+.contacto
+  padding: 4rem 0
+  text-align: center
+  a
+    padding: .25rem 1rem
+    border-right: 1px solid $basecolor
+    &:last-child
+      border-right: 0
+.div-fondo
+  background-position: center center
+  background-size: cover
+  background-repeat: no-repeat
+  overflow: hidden
+  position: relative
+  transform: scale(1, 1)
+  transition: all 0.3s
+  z-index: 1
+  &:hover
+    transform: scale(1.05, 1.05)
+    z-index: 2
+    box-shadow: $shadow
+
+
+$imgs-fondo: pan
+@each $img-fondo in $imgs-fondo
+  .div-fondo-#{$img-fondo}
+    background-image: url('#{$image-dir}/#{$img-fondo}.jpg')
+

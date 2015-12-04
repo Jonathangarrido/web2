@@ -1,0 +1,25 @@
+{
+  "name": "web-angular",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "jonathan <jonathan.garrido1988@gmail.com>"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "hammerjs": "~2.0.4",
+    "bxslider-4": "~4.2.5",
+    "jquery": "~2.1.4",
+    "angular": "~1.4.8",
+    "angular-google-maps": "~2.2.1"
+  }
+}

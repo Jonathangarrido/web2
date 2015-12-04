@@ -1,0 +1,55 @@
+<!DOCTYPE html><html lang=es><head><meta charset=UTF-8><meta name=viewport content="width=device-width, initial-scale=1"><title>MIA</title><link rel=stylesheet href=./css/app.css></head><body><div class="full-home barne-home"><h1 class=home-titulo>Canchas</h1></div><div ng-app=myApp ng-controller=MyController class=barne-canchas><div class=barne-buscador><label for=buscador>Busqueda:</label><input type=text ng-model=Buscador id=buscador></div><div class="barne-lista row"><ul ng-repeat="producto in productos | filter:Buscador | orderBy : 'nombre'" class="c50-xs c33-s c25-l"><li ng-click=ha(producto) class="barne-canchas-fondo cancha-{{producto.fondo}}"><h2>{{ producto.nombre }}</h2></li></ul></div><div id=bandera></div><div class=barne-info ng-show=mostrar id=barne-info><h1>{{canchaNombre}}</h1><table><tr><th>Nº Canchas</th><td>{{canchaNumero}}</td></tr><tr><th>Superficie</th><td>{{canchaSuperficie}}</td></tr><tr><th>Precio</th><td>{{canchaPrecio}}</td></tr><tr><th>Horario</th><td>{{canchaHorario}}</td></tr><tr><th>Contacto</th><td><a href=tel:{{canchaContacto}}>{{canchaContacto}}</a></td></tr><tr><th>Descripción</th><td>{{canchaDescripcion}}</td></tr></table></div><div id=map class=barne-map ng-show=mostrar></div></div><footer class=barne-footer>Ayuda</footer><script src=./js/vendor.js></script><script src=./js/app.js></script><script src=./js/angular.min.js></script><script>
+    angular  
+      .module('myApp',[])
+
+      .controller('MyController', function($scope, $http){
+
+        // LLAMO AL JSON CON LOS DATOS
+        $http.get('js/canchas.json')
+         .then(function(res){
+            $scope.productos = res.data;                
+          });
+
+        $scope.mostrar = false
+
+        // PARA EL DIV DE INFO DE CADA CANCHA
+        $scope.ha = function(n){
+          $scope.mostrar = true
+          $scope.canchaNombre = n.nombre
+          $scope.canchaLat = n.lat
+          $scope.canchaLng = n.lng
+          $scope.canchaNumero = n.numero
+          $scope.canchaSuperficie = n.superficie
+          $scope.canchaPrecio = n.precio
+          $scope.canchaHorario = n.horario
+          $scope.canchaContacto = n.contacto
+          $scope.canchaDescripcion = n.descripcion
+          $scope.canchaImagenes = n.imagenes
+          $scope.map(n.lat, n.lng)
+
+          var conteTop = $("#bandera").offset().top;
+          $('body,html').animate({scrollTop : conteTop}, 500);
+        }
+
+        $scope.map = function(p, q){
+          var barnechea = {lat: p, lng: q};
+          map = new google.maps.Map(document.getElementById('map'), {
+              center: barnechea,
+              zoom: 16,
+              mapTypeId: google.maps.MapTypeId.HYBRID,
+              scrollwheel: false,
+              navigationControl: false,
+              mapTypeControl: false,
+              scaleControl: false,
+              draggable: true,
+          });
+          var marker = new google.maps.Marker({
+            position: barnechea,
+            map: map,
+            title: 'asdasd',
+            animation: google.maps.Animation.DROP
+          });
+        }
+      })
+
+  </script><script async="" defer="" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZPV6V8ZRsQOPYQecIO0eHh-gVuAUzFjY"></script></body></html>

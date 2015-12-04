@@ -1,0 +1,21 @@
+
+//  INCLUIR EN DIV 
+//    @include full-home()
+
+%full-home
+  background-position: center center
+  background-size: cover
+  background-repeat: no-repeat
+  height: 100vh
+  display: flex
+  align-items: center
+  justify-content: center
+  overflow: hidden
+  position: relative
+  color: white  
+
+@mixin full-home($img : 'fondo')
+  background-image: url('#{$image-dir}/#{$img}-s.jpg')
+  @extend %full-home
+  @include media($breakpoints-m)
+    background-image: url('#{$image-dir}/#{$img}.jpg')

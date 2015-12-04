@@ -1,0 +1,64 @@
+
+//$TAMAÑOS
+$basefontsize: 16px
+
+$size-xl: 2.25
+$size-l : 1.8
+$size-m : 1.5
+$size-s : 1.125
+$size-xs: 0.75
+
+//$DIR   Use: background-image:url("#{$image-dir}/btn.jpg")
+$image-dir: "../img"
+$font-dir : "../fonts"
+
+//$LAYOUT
+$baselineheight : 1.5em
+$pagemaxwidth   : 80%
+$radius         : 2px
+$hovertransition: .3s
+$animationtime  : .8s
+$paddingpage    : 2rem
+$shadow         : 0px 0px 10px rgba(0, 0, 0, 0.8);
+
+//$FONT-FACE
+$basefont     : "Helvetica Neue", Helvetica, Arial, sans-serif
+$altfont      : Georgia, Times, "Times New Roman"
+$altlineheight: 1.5em
+
+//$COLORS
+$basecolor      : rgb(255,148,77) // Naranja
+$basecolor-light: lighten($basecolor, 5%)
+$secondary      : rgb(219,216,121) // Rojo CoolVillage
+$bordercolor    : lighten($secondary, 50) // Verde Bordes
+
+$black      : #000
+$superdark  : lighten($black, 10%)
+$darkergrey : lighten($black, 15%)
+$darkgrey   : lighten($black, 25%)
+$grey       : lighten($black, 50%)
+$lightgrey  : lighten($black, 75%)
+$lightergrey: lighten($black, 90%)
+$white      : #fff
+
+$background      : $white
+$textcolor       : $darkergrey
+$textcolor-strong: $black
+$selection-color : lighten($basecolor, 10%)
+
+$linkcolor       : $basecolor
+$linkcolorhover  : darken($linkcolor, 10)
+$linkcolorvisited: $basecolor
+$linkcolorfocus  : darken($linkcolorvisited, 10)
+
+$formpadding : 0.375rem 0.75rem
+$formbordercolor : #ccc
+$fomrsize : 0.875
+
+//$BREAKPOINTS
+$breakpoints-xs: 0
+$breakpoints-s: 500px
+$breakpoints-m: 800px
+$breakpoints-l: 1200px
+
+$breakpoints: (xs: $breakpoints-xs, s: $breakpoints-s, m: $breakpoints-m, l: $breakpoints-l);
